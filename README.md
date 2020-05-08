@@ -26,9 +26,7 @@
     // Defaults to true.
     verbose: true,
 
-    preview: !!process.env.CRANE_KEY,
-    craneKey: process.env.CRANE_SECRET,
-    craneSecret: process.env.CRANE_SECRET,
-    craneHost: process.env.CRANE_HOST,
+    
+    adminToken: process.env.SHOPIFY_ADMIN_TOKEN,
   },
 ```
