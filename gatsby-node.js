@@ -3,6 +3,7 @@ const { object, string } = require('yup');
 
 const { ProductNode } = require('./nodes');
 const { TYPE_PREFIX, PRODUCT } = require('./constants');
+const { PRODUCT_FRAGMENT } = require('./fragments');
 
 const PLUGIN_CONFIG_SCHEMA = object({
   shopName: string().required(),
@@ -192,12 +193,11 @@ async function* adminProductDeletes(clients, since) {
 }
 
 const PRODUCTS_BY_IDS_QUERY = `
+  ${PRODUCT_FRAGMENT}
   query ($ids: [ID!]!) {
     nodes(ids: $ids) {
       ...on Product {
-        id
-        title
-        handle
+        ...ProductFragment
       }
     }
   }
