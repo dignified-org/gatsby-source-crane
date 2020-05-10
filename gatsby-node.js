@@ -270,7 +270,8 @@ async function sourceNodes(
     getNodesByType(`${TYPE_PREFIX}${PRODUCT}`).forEach(node => touchNode({ nodeId: node.id }));
   }
 
-  const since = lastFetched ? new Date(lastFetched) : new Date('1900-01-01T00:00:00Z');
+  // Add extra 5 minutes because shopify sometimes takes a while to publish updates
+  const since = lastFetched ? new Date(lastFetched - 5 * 60 * 1000) : new Date('1900-01-01T00:00:00Z');
 
   const startedAt = Date.now();
 
