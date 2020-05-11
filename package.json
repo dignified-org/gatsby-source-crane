@@ -1,15 +1,16 @@
 {
   "name": "gatsby-source-crane",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "gatsby-source-shopify": "3.2.1",
-    "pusher-js": "6.0.2"
+    "axios": "^0.19.2",
+    "gatsby-node-helpers": "^0.3.0",
+    "yup": "^0.28.5"
   }
 }
